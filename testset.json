@@ -1,0 +1,234 @@
+[
+    {
+        "question": "What does guinsoos do?",
+        "answer": "Guinsoo's Rageblade gives 10 ability power and 10 attack speed and attacks grant 5% stacking Attack Speed."
+    },
+    {
+        "question": "What are Vayne's traits?", 
+        "answer": "Vaynes's traits are Anima Squad and Slayer"
+    },
+    {
+        "question": "What are Yuumi's traits?", 
+        "answer": "Yuumi's traits are Anima Squad, A.M.P, and Strategist"
+    },
+    {
+        "question": "What are Urgot's traits?", 
+        "answer": "Urgot's traits are BoomBots and Executioner"
+    },
+    {
+        "question": "What are Kog'Maw's traits?", 
+        "answer": "Kog'Maw's traits are BoomBots and Rapidfire"
+    },
+    {
+        "question": "What are Kobuko's traits?", 
+        "answer": "Kobuko's traits are Cyberboss and Bruiser"
+    },
+    {
+        "question": "What are Veigar's traits?", 
+        "answer": "Veigar's traits are Cyberboss and Techie"
+    },
+    {
+        "question": "What are Galio's traits?", 
+        "answer": "Galio's traits are Cypher and Bastion"
+    },
+    {
+        "question": "What are Renekton's traits?", 
+        "answer": "Renekton's traits are Divinicorp, Overlord, and Bastion"
+    },
+    {
+        "question": "What are Senna's traits?", 
+        "answer": "Senna's traits are Divinicorp and Slayer"
+    },
+    {
+        "question": "What are Zeri's traits?", 
+        "answer": "Zeri's traits are Exotech and Rapidfire"
+    },
+    {
+        "question": "What are Mordekaiser's traits?", 
+        "answer": "Mordekaiser's traits are Exotech, Bruiser, and Techie"
+    },
+    {
+        "question": "What are Jhin's traits?", 
+        "answer": "Jhin's traits are Exotech, Marksman, and Dynamo"
+    },
+    {
+        "question": "What are Garen's traits?", 
+        "answer": "Garen's trait is God of the Net"
+    },
+    {
+        "question": "What are Viego's traits?", 
+        "answer": "Viego's traits are Golden Ox, Soul Killer, and Techie"
+    },
+    {
+        "question": "What are Annie's traits?", 
+        "answer": "Annie's traits are Golden Ox, and A.M.P"
+    },
+    {
+        "question": "What are Jarvan IV's traits?", 
+        "answer": "Jarven IV's traits are Golden Ox, Vanguard, and Slayer"
+    },
+    {
+        "question": "What are Elise's traits?", 
+        "answer": "Elise's traits are Nitro and Dynamo"
+    },
+    {
+        "question": "What are Shyvana's traits?", 
+        "answer": "Shyvana's traits are Nitro, Techie, and Bastion"
+    },
+    {
+        "question": "What are Nidalee's traits?", 
+        "answer": "Nidalee's traits are Nitro, Rapidfire, and Marksman"
+    },
+    {
+        "question": "What are Samira's traits?", 
+        "answer": "Samira's traits are Street Demon and A.M.P"
+    },
+    {
+        "question": "What are Neeko's traits?", 
+        "answer": "Neeko's traits are Street Demon and Strategist"
+    },
+    {
+        "question": "What are Dr.Mundo's traits?", 
+        "answer": "Dr.Mundo's traits are Street Demon, Bruiser, and Slayer"
+    },
+    {
+        "question": "What are Miss Fortune's traits?", 
+        "answer": "Miss Fortune's traits are Syndicate and Dynamo"
+    },
+    {
+        "question": "What are Zac's traits?", 
+        "answer": "Zac's traits is Virus"
+    },
+    {
+        "question": "What bonuses does Anima Squad give?",
+        "answer": "Anima Squad gives 10 Armor and MR and 5% Dmg Amp with 3 Anima Squad Units, 20 Armor and MR and 10% Dmg Amp with 5 Anima Squad Units, 30 Armor and Mr and 15% Dmg Amp with 7 Anima Squad Units, and 100 Armor and MR and 50% Dmg Amp with 10 Anima Squad Units"
+    },
+    {
+        "question": "What does Anima Squad do?",
+        "answer": "At each tier, pick a weapon that a random Anima Squad champion fires periodically during combat. Anima Squad champions gain Armor, Magic Resist, and Damage Amp."
+    },
+    {
+        "question": "What bonuses does BoomBots give?",
+        "answer": "BoomBots give 150 magic damage with 2 BoomBot Units, 330 magic damange with 4 BoomBot Units, and Fire to missles, each dealing 200 magic damage with 6 BoomBot units"
+    },
+    {
+        "question": "What does BoomBots do?",
+        "answer": "BoomBots fire a missile every 400 damage dealt at a nearby enemy that deals magic damage. 10% of damage taken contributes to damage dealt."
+    },
+    {
+        "question": "What bonuses does Cyberboss give?",
+        "answer": "Cyberboss gives 18% health and 15 AP with 2 Cyberboss Units, 25% health and 25 AP with 3 Cyberboss Units, and All cyberbosses upgrade and your strongest Cyberboss instead gets 33% health and 30 AP with 4 Cyberboss Units"
+    },
+    {
+        "question": "What does Cyberboss do?",
+        "answer": "Your strongest Cyberboss upgrades to its final form and gains Health, Ability Power, and its ability hits more enemies."
+    },
+    {
+        "question": "What bonuses does Divinicorp give?",
+        "answer": "Divini increases stats by 100% for 1 Divinicorp unit, 110% for 2 Divinicorp units, 125% for 3 Divinicorp units, 145% for 4 Divinicorp units, 165% for 5 Divinicorp units, , 185% for 6 Divinicorp units, and 200% for 7 Divinicorp units"
+    },
+    {
+        "question": "What does Divinicorp do?",
+        "answer": "Divinicorp champions grant unique stats to your team, increased for each Divinicorp in play. Divinicorp champions gain double. Morgana - 9% AP, Rhaast - 6 Armor/MR, Senna - 8% AD, Gragas - 50 Health, Vex - 5% Crit, Renekton - 5% Attack Speed, and Emblem - 3% Omnivamp"
+    },
+    {
+        "question": "What bonuses does Cypher give?",
+        "answer": "Cypher gives 25% AD and AP and 1 times Intel for 1 Cypher unit, 40% AD and AP and 1.5 times Intel for 2 Cypher units, and 50% AD and AP and 2 times Intel for 3 Cypher units"
+    },
+    {
+        "question": "What does Cypher do?",
+        "answer": "Cypher gains Intel by losing combat, increased for loss streaks. Gain a small amount for killing enemies.You may trade your Intel for loot one time, on either round 3-3, 3-7, 4-3, or 4-7. After trading Intel, Cypher champions gain Attack Damage and Ability Power."
+    },
+    {
+        "question": "What bonuses does Exotech give?",
+        "answer": "Exotech gives 30 health and 2% AS and 1st Exotech Item with 3 Exotech unit, 110 health and 3% AS and 2nd Exotech item for 5 Exotech units, 200 health and 7% AS and 3rd Exoxtech item for 7 Exotech units, and 500 health and 40% AS and all Exotech itesm for 10 Exotech units"
+    },
+    {
+        "question": "What does Exotech do?",
+        "answer": "Exotech gains 3 out of 7 unique Exotech items that can only be equipped by Exotech champions. They gain Health and Attack Speed for each item equipped."
+    },
+    {
+        "question": "What bonuses does God of the Net give?",
+        "answer": "God of the Net gives 1 Bonus Effect where after 2 player combats, open an Armory of Trait Mods that permanently reprogram a champion to benefit from a trait (but not contribute). Every time you get a Trait Mod, the next one requires 1 additional round. Champions can only have one Trait Mod."
+    },
+    {
+        "question": "What does God of the Net do?",
+        "answer": "After 2 player combats, open an Armory of Trait Mods that permanently reprogram a champion to benefit from a trait (but not contribute). Every time you get a Trait Mod, the next one requires 1 additional round. Champions can only have one Trait Mod."
+    },
+    {
+        "question": "What bonuses does Golden Ox give?",
+        "answer": "Golden Ox gives 18% Dmg Amp and 20% gold for 2 Golden Ox units, 20% Dmg Amp and 30% gold for 4 Golden Ox units, and 22% Dmg Amp and 50% loot and 8% chance loot is a component for 6 Golden Ox units"
+    },
+    {
+        "question": "What does Golden Ox do?",
+        "answer": "Golden Ox gain Damage Amp and have a chance to drop gold on kill. If you spend gold on rerolls or XP in a single turn, permanently increase their Damage Amp and the gold required for the next bonus. Rerolls count double towards gold spent. (Golden Ox must have fought last round)"
+    },
+    {
+        "question": "What bonuses does Nitro give?",
+        "answer": "Nitro summons R-080T for 3 Nitro units, and Fires a giant laser for 4 Nitro Units"
+    },
+    {
+        "question": "What does Nitro do?",
+        "answer": "Every round, Nitro champions grant Chrome to R-080T, based on their star level. Each Chrome grants 14 Health and 1 Ability Power. At 200 Chrome, it upgrades to T-43X!"
+    },
+    {
+        "question": "What bonuses does Overlord give?",
+        "answer": "Overlord gives 1 Bonus effect were the Overlord takes a bite out of the unit in the hex behind him, dealing 40% of their max Health as true damage. He gains 40% of their Health and 33% of their Attack Damage."
+    },
+    {
+        "question": "What does Overlord do?",
+        "answer": "Overlord takes a bite out of the unit in the hex behind him, dealing 40% of their max Health as true damage. He gains 40% of their Health and 33% of their Attack Damage."
+    },
+    {
+        "question": "What bonuses does Soul Killer give?",
+        "answer": "Soul Killer gives 1 Bonus effect where a hologram copy of the highest cost enemy Viego helped kill last round. It has 600/900/3000 Health, deals 30%/40%/200% damage, and has 1 recommended item."
+    },
+    {
+        "question": "What does Soul Killer do?",
+        "answer": "Gain a hologram copy of the highest cost enemy Viego helped kill last round. It has 600/900/3000 Health, deals 30%/40%/200% damage, and has 1 recommended item."
+    },
+    {
+        "question": "What bonuses does Street Demon give?",
+        "answer": "Street Demon gives +6% health and 6 AP and 6% AD for 3 Street Demon units, +10% health and 10 AP and 15% AD for 5 Street Demon units, +15% health and 15 AP and 15% AD for 7 Street Demon units, and +25% health and 25 AP and 25% AD and paint the town for 10 Street Demon units"
+    },
+    {
+        "question": "What does Street Demon do?",
+        "answer": "Allies in painted hexes gain Health, Ability Power, and Attack Damage. Some hexes are Signature hexes and grant 50% more. Street Demons double all bonuses."
+    },
+    {
+        "question": "What bonuses does Syndicate give?",
+        "answer": "Syndaicate gives 100 health and 5% Dmg Amp and 1 Kingpin for 3 Syndicate units, 450 health, 20% Dmg Amp and 2 Kingpins for 5 Syndicate units, and 600 health and 30% Dmg Amp and Upgrade Kingpin effect for 7 Sydicate Units"
+    },
+    {
+        "question": "What does Syndicate do?",
+        "answer": "Get a Kingpin hat that uniquely upgrades a Syndicate champion's ability. Syndicate champions gain Health and Damage Amp"
+    },
+    {
+        "question": "What bonuses does Virus give?",
+        "answer": "Virus gives 1 Bonus Effect where the Virus infects your shop with a 10% chance to spawn a bloblet. When purchased, it merges and increases the strongest Zac's max Health by 3% and Ability Power by 5."
+    },
+    {
+        "question": "What does Virus do?",
+        "answer": "The Virus infects your shop with a 10% chance to spawn a bloblet. When purchased, it merges and increases the strongest Zac's max Health by 3% and Ability Power by 5."
+    },
+    {
+        "question": "What champions have ramping attack speed?",
+        "answer": "Champions that have the rapidfire trait have ramping attack speed."
+    },
+    {
+        "question": "What champions have a shield?",
+        "answer": "The champions with shields are: Garen, Braum, Mordekaiser, Skarner, Jax, and Vi."
+    },
+    {
+        "question": "What techie champions do physical damage?",
+        "answer": "No Techie champions deal physical damage."
+    },
+    {
+        "question": "What Executioner champions deal physical damage?",
+        "answer": "The Executioner champions that deal physical damage are: Graves, Rengar, and Urgot."
+    },
+    {
+        "question": "What trait is best if I want to lose streak?",
+        "answer": "The Cypher trait is best if you want to lose streak."
+    }
+]
