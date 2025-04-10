@@ -4,8 +4,24 @@
         "answer": "Guinsoo's Rageblade gives 10 ability power and 10 attack speed and attacks grant 5% stacking Attack Speed."
     },
     {
+        "question": "What does infinity edge do?",
+        "answer": "Abilities can critically strike. If holder's ability can already critically strike then give +10% critical strike damage instead and gives the stats +35% attack damage and +35% critical strike chance."
+    },
+    {
+        "question": "How do I make an infinity edge?",
+        "answer": "To make an Infinity Edge, you need a BF Sword and a Sparring Glove."
+    },
+    {
+        "question": "How do I make a dragon's claw?",
+        "answer": "To make a Dragon's Claw, you need two Negatron Cloaks."
+    },
+    {
+        "question": "What does spear of shojin do?",
+        "answer": "Bonus: Attacks grant 5 bonus mana and gives the stats +15% attack damage, +15 ability power, +15 mana."
+    },
+    {
         "question": "What are Vayne's traits?", 
-        "answer": "Vaynes's traits are Anima Squad and Slayer"
+        "answer": "Vayne's traits are Anima Squad and Slayer"
     },
     {
         "question": "What are Yuumi's traits?", 
@@ -77,7 +93,7 @@
     },
     {
         "question": "What are Nidalee's traits?", 
-        "answer": "Nidalee's traits are Nitro, Rapidfire, and Marksman"
+        "answer": "Nidalee's traits are Nitro and A.M.P"
     },
     {
         "question": "What are Samira's traits?", 
@@ -100,112 +116,56 @@
         "answer": "Zac's traits is Virus"
     },
     {
-        "question": "What bonuses does Anima Squad give?",
-        "answer": "Anima Squad gives 10 Armor and MR and 5% Dmg Amp with 3 Anima Squad Units, 20 Armor and MR and 10% Dmg Amp with 5 Anima Squad Units, 30 Armor and Mr and 15% Dmg Amp with 7 Anima Squad Units, and 100 Armor and MR and 50% Dmg Amp with 10 Anima Squad Units"
-    },
-    {
         "question": "What does Anima Squad do?",
-        "answer": "At each tier, pick a weapon that a random Anima Squad champion fires periodically during combat. Anima Squad champions gain Armor, Magic Resist, and Damage Amp."
-    },
-    {
-        "question": "What bonuses does BoomBots give?",
-        "answer": "BoomBots give 150 magic damage with 2 BoomBot Units, 330 magic damange with 4 BoomBot Units, and Fire to missles, each dealing 200 magic damage with 6 BoomBot units"
+        "answer": "At each tier, pick a weapon that a random Anima Squad champion fires periodically during combat. Anima Squad champions gain Armor, Magic Resist, and Damage Amp.(3) - 10 armor and magic resist, 5% damage amp,Choose a weapon,(5) - 20 armor and magic resist, 10% damage amp,Choose a weapon, (7) - 30 armor and magic resist, 15% damage amp, Choose a weapon, (10) - 50 armor and magic resist, 25% damage amp,Choose an ultimate weapon."
     },
     {
         "question": "What does BoomBots do?",
-        "answer": "BoomBots fire a missile every 400 damage dealt at a nearby enemy that deals magic damage. 10% of damage taken contributes to damage dealt."
-    },
-    {
-        "question": "What bonuses does Cyberboss give?",
-        "answer": "Cyberboss gives 18% health and 15 AP with 2 Cyberboss Units, 25% health and 25 AP with 3 Cyberboss Units, and All cyberbosses upgrade and your strongest Cyberboss instead gets 33% health and 30 AP with 4 Cyberboss Units"
+        "answer": "BoomBots fire a missile every 400 damage dealt at a nearby enemy that deals magic damage. 8% of damage taken contributes to damage dealt.(2) - 145 magic damage, (4) - 310 magic damage, (6) - Fire two missiles, each dealing 190 magic damage."
     },
     {
         "question": "What does Cyberboss do?",
-        "answer": "Your strongest Cyberboss upgrades to its final form and gains Health, Ability Power, and its ability hits more enemies."
-    },
-    {
-        "question": "What bonuses does Divinicorp give?",
-        "answer": "Divini increases stats by 100% for 1 Divinicorp unit, 110% for 2 Divinicorp units, 125% for 3 Divinicorp units, 145% for 4 Divinicorp units, 165% for 5 Divinicorp units, , 185% for 6 Divinicorp units, and 200% for 7 Divinicorp units"
+        "answer": "Your strongest Cyberboss upgrades to its final form and gains Health, Ability Power, and its ability hits more enemies. (2) - 18% health, 15 ability power, (3) - 25% health, 25 ability power, (4) - All Cyberbosses upgrade, Your strongest Cyberboss gains 33% health and 30 ability power."
     },
     {
         "question": "What does Divinicorp do?",
-        "answer": "Divinicorp champions grant unique stats to your team, increased for each Divinicorp in play. Divinicorp champions gain double. Morgana - 9% AP, Rhaast - 6 Armor/MR, Senna - 8% AD, Gragas - 50 Health, Vex - 5% Crit, Renekton - 5% Attack Speed, and Emblem - 3% Omnivamp"
-    },
-    {
-        "question": "What bonuses does Cypher give?",
-        "answer": "Cypher gives 25% AD and AP and 1 times Intel for 1 Cypher unit, 40% AD and AP and 1.5 times Intel for 2 Cypher units, and 50% AD and AP and 2 times Intel for 3 Cypher units"
+        "answer": "Divinicorp champions grant unique stats to your team, increased for each Divinicorp in play. Divinicorp champions gain double. (1) - 100% bonus, (2) - 110% bonus, (3) - 125% bonus, (4) - 145% bonus, (5) - 165% bonus, (6) - 185% bonus, (7) - 200% bonus."
     },
     {
         "question": "What does Cypher do?",
-        "answer": "Cypher gains Intel by losing combat, increased for loss streaks. Gain a small amount for killing enemies.You may trade your Intel for loot one time, on either round 3-3, 3-7, 4-3, or 4-7. After trading Intel, Cypher champions gain Attack Damage and Ability Power."
-    },
-    {
-        "question": "What bonuses does Exotech give?",
-        "answer": "Exotech gives 30 health and 2% AS and 1st Exotech Item with 3 Exotech unit, 110 health and 3% AS and 2nd Exotech item for 5 Exotech units, 200 health and 7% AS and 3rd Exoxtech item for 7 Exotech units, and 500 health and 40% AS and all Exotech itesm for 10 Exotech units"
+        "answer": "Gain Intel by losing combat, increased for loss streaks. Gain a small amount for killing enemies. You may trade your Intel for loot one time on round 3-3, 3-7, 4-3, 4-7, or 5-5. After trading Intel, Cypher champions gain Attack Damage and Ability Power. (3) - 1x Intel, 25% attack damage and ability power, (4) - 1.5x Intel, 35% attack damage and ability power, (5) - 2x Intel, 45% attack damage and ability power."
     },
     {
         "question": "What does Exotech do?",
-        "answer": "Exotech gains 3 out of 7 unique Exotech items that can only be equipped by Exotech champions. They gain Health and Attack Speed for each item equipped."
-    },
-    {
-        "question": "What bonuses does God of the Net give?",
-        "answer": "God of the Net gives 1 Bonus Effect where after 2 player combats, open an Armory of Trait Mods that permanently reprogram a champion to benefit from a trait (but not contribute). Every time you get a Trait Mod, the next one requires 1 additional round. Champions can only have one Trait Mod."
+        "answer": "Gain unique items that can only be equipped by Exotech champions. They gain Health and Attack Speed for each item equipped. (3) - 30 health, 2% attack speed , gain Exotech Item, (5) - 110 health, 3% attack speed , gain Exotech Item, (7) - 200 health, 7% attack speed, gain Exotech Item, (10) - 500 health, 40% attack speed, Enhance."
     },
     {
         "question": "What does God of the Net do?",
-        "answer": "After 2 player combats, open an Armory of Trait Mods that permanently reprogram a champion to benefit from a trait (but not contribute). Every time you get a Trait Mod, the next one requires 1 additional round. Champions can only have one Trait Mod."
-    },
-    {
-        "question": "What bonuses does Golden Ox give?",
-        "answer": "Golden Ox gives 18% Dmg Amp and 20% gold for 2 Golden Ox units, 20% Dmg Amp and 30% gold for 4 Golden Ox units, and 22% Dmg Amp and 50% loot and 8% chance loot is a component for 6 Golden Ox units"
+        "answer": "After 2 player combats, open an Armory of Trait Mods that permanently reprogram a champion to benefit from a trait (but not contribute). Every time you get a Trait Mod, the next one requires 1 additional round."
     },
     {
         "question": "What does Golden Ox do?",
-        "answer": "Golden Ox gain Damage Amp and have a chance to drop gold on kill. If you spend gold on rerolls or XP in a single turn, permanently increase their Damage Amp and the gold required for the next bonus. Rerolls count double towards gold spent. (Golden Ox must have fought last round)"
-    },
-    {
-        "question": "What bonuses does Nitro give?",
-        "answer": "Nitro summons R-080T for 3 Nitro units, and Fires a giant laser for 4 Nitro Units"
+        "answer": "Golden Ox gain Damage Amp and have a chance to drop gold on kill. If you spend 8 gold on rerolls or XP in a single turn, permanently increase their Damage Amp and the gold required for the next bonus. Rerolls count double towards gold spent.(Golden Ox must have fought last round). (2) - 18% damage amp, 20% gold, (4) - 20% damage amp, 30% gold, (6) - 22% damage amp, 66% loot, 8% chance loot is a component."
     },
     {
         "question": "What does Nitro do?",
-        "answer": "Every round, Nitro champions grant Chrome to R-080T, based on their star level. Each Chrome grants 14 Health and 1 Ability Power. At 200 Chrome, it upgrades to T-43X!"
-    },
-    {
-        "question": "What bonuses does Overlord give?",
-        "answer": "Overlord gives 1 Bonus effect were the Overlord takes a bite out of the unit in the hex behind him, dealing 40% of their max Health as true damage. He gains 40% of their Health and 33% of their Attack Damage."
+        "answer": "Every round, Nitro champions grant Chrome to R-080T, based on their star level. Each Chrome grants 14 Health and 1 Ability Power. At 200 Chrome, it upgrades to T-43X!, (3) - Summon R-080T!, (4) - Fire a giant laser!"
     },
     {
         "question": "What does Overlord do?",
-        "answer": "Overlord takes a bite out of the unit in the hex behind him, dealing 40% of their max Health as true damage. He gains 40% of their Health and 33% of their Attack Damage."
-    },
-    {
-        "question": "What bonuses does Soul Killer give?",
-        "answer": "Soul Killer gives 1 Bonus effect where a hologram copy of the highest cost enemy Viego helped kill last round. It has 600/900/3000 Health, deals 30%/40%/200% damage, and has 1 recommended item."
+        "answer": "The Overlord takes a bite out of the unit in the hex behind him, dealing 40% of their max Health as true damage. He gains 40% of their Health and 33% of their Attack Damage."
     },
     {
         "question": "What does Soul Killer do?",
         "answer": "Gain a hologram copy of the highest cost enemy Viego helped kill last round. It has 600/900/3000 Health, deals 30%/40%/200% damage, and has 1 recommended item."
     },
     {
-        "question": "What bonuses does Street Demon give?",
-        "answer": "Street Demon gives +6% health and 6 AP and 6% AD for 3 Street Demon units, +10% health and 10 AP and 15% AD for 5 Street Demon units, +15% health and 15 AP and 15% AD for 7 Street Demon units, and +25% health and 25 AP and 25% AD and paint the town for 10 Street Demon units"
-    },
-    {
         "question": "What does Street Demon do?",
-        "answer": "Allies in painted hexes gain Health, Ability Power, and Attack Damage. Some hexes are Signature hexes and grant 50% more. Street Demons double all bonuses."
-    },
-    {
-        "question": "What bonuses does Syndicate give?",
-        "answer": "Syndaicate gives 100 health and 5% Dmg Amp and 1 Kingpin for 3 Syndicate units, 450 health, 20% Dmg Amp and 2 Kingpins for 5 Syndicate units, and 600 health and 30% Dmg Amp and Upgrade Kingpin effect for 7 Sydicate Units"
+        "answer": "Allies in painted hexes gain Health, Ability Power, and Attack Damage. Some hexes are Signature hexes and grant 50% more. Street Demons double all bonuses. (3) - 6% health, 6 ability power, 6% attack damage, (5) - 10% health, 10 ability power, 10% attack damage, (7) - 15% health, 15 ability power, 15% attack damage, (10) - 40% health, 40 abilty power, 40% attack damage, and paint the town!"
     },
     {
         "question": "What does Syndicate do?",
-        "answer": "Get a Kingpin hat that uniquely upgrades a Syndicate champion's ability. Syndicate champions gain Health and Damage Amp"
-    },
-    {
-        "question": "What bonuses does Virus give?",
-        "answer": "Virus gives 1 Bonus Effect where the Virus infects your shop with a 10% chance to spawn a bloblet. When purchased, it merges and increases the strongest Zac's max Health by 3% and Ability Power by 5."
+        "answer": "Get a Kingpin hat that uniquely upgrades a Syndicate champion's ability. Syndicate champions gain Health and Damage Amp. (3) - 100 health, 5% damage amp, 1 Kingpin, (5) - 450 health, 20% damage amp, 2 Kingpins, (7) - 600 health, 30% damage amp, Upgrade Kingpin effect."
     },
     {
         "question": "What does Virus do?",
