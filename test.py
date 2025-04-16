@@ -11,7 +11,7 @@ file_vectors = {
 
 }
 
-files = ["champion_info.json", "synergy_info.json", "item_info.json"]
+files = ["champion_key.json", "synergy_key.json", "item_key.json"]
 for file in files:
     with open(file, "r") as file:
         qa_data = json.load(file)
@@ -22,6 +22,6 @@ for file in files:
 
     file_vectors[cur_file] = embedding
 
-with open('file_vectors.pkl','wb') as file:
+with open('rag_keys.pkl','wb') as file:
     pickle.dump(file_vectors, file)
 

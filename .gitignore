@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 test.py
 notes.txt
+rag_keys.pkl
