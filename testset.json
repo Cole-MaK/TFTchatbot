@@ -1,5 +1,13 @@
 [
     {
+        "question":"what trait gives the circle things on the board and what do they do?",
+        "answer": "Street Demons give paint hexes on the board and the hexes give Health, Ability Power, and Attack Damage. Some hexes are Signature hexes and grant 50% more."
+    },
+    {
+        "question": "what traits dont have emblems?",
+        "answer": "The Cyberboss, cypher, nitro, A.M.P., and vanguard traits do not have emblems"
+    },
+    {
         "question": "What champions are Executioner?",
         "answer": "Executioner champions are: Graves, Rengar, Urgot, Varus, and Vex"   
     },

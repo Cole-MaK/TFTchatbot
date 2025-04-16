@@ -36,6 +36,14 @@ def get_rag_keys(file_list):
         pickle.dump(file_vectors, file)
 
 def get_rag_file(user_question, key_file):
+    '''
+    input:
+    user_question (str): user prompt
+    key_file: dictionary of vector embeddings of key documents
+
+    output:
+    return key: name to get document
+    '''
 
     model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 

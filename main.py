@@ -17,30 +17,37 @@ from functions.functions import get_rag_file
 
 load_dotenv()
 
+## open full master prompt
 # with open("full_info.json", "r") as file:
-#     qa_data = json.load(file)
-# qa_data = qa_data['text']
-    
+#     qa_data = json.load(file)['text']
+
+# open test questions
 with open("testset.json", "r") as file:
     qa_test = json.load(file)
 
+# initialize client
 api_key = os.getenv('API_KEY')
 
 client = genai.Client(api_key=api_key)
 
+# initialize counter for question percentage
 num_correct = 0
 
+# iterate through all questions
 for i, qa_pair in enumerate(qa_test):
+    # get question and answer pair from json
     question = qa_pair["question"]
     answer = qa_pair["answer"]
 
     print(f"**Question {i+1}**: {question}")
 
+    # decide what document to use by obtaining key
     key = get_rag_file(user_question=question, key_file="rag_keys.pkl")
 
     print(f"**Proposed Key**: {key}")
 
-    with open(f"{key}_info.json","r") as file:
+    # use key to access correct document
+    with open(f"jsoninfo_keys/{key}_info.json","r") as file:
         qa_data = json.load(file)['text']
 
     prompt = f"""
@@ -48,7 +55,7 @@ for i, qa_pair in enumerate(qa_test):
 
     {qa_data} 
 
-    Make sure to think before answering the user question. Consider what champions have what traits.
+    Make sure to think before answering the user question.
 
     User Question: {question}
 """
@@ -71,21 +78,22 @@ for i, qa_pair in enumerate(qa_test):
         model="gemini-2.0-flash", contents=judge_prompt
     ).text
 
-#     ## Cosine Similarity
-#     # answers = [answer, response]
-#     # embeddings = model.encode(answers)
-#     # similarity_score = cosine_similarity(embeddings)[0][1]
+    ## Cosine Similarity
+    # answers = [answer, response]
+    # embeddings = model.encode(answers)
+    # similarity_score = cosine_similarity(embeddings)[0][1]
     
-#     # if similarity_score > .70:
-#     #     num_correct += 1
-#     # else:
-#     #     print(question)
-#     # print(response)
+    # if similarity_score > .70:
+    #     num_correct += 1
+    # else:
+    #     print(question)
+    # print(response)
     
     print(f"**Model Response**: {response}")
     print(f"**True Answer**: {answer}")
     print(f"**Judge**: {judge_response}")
 
+    # counter for correct
     if 'yes' in judge_response.lower():
         num_correct += 1
         print('anotha one')
