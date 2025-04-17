@@ -23,7 +23,7 @@ def get_rag_keys(file_list):
 
     files = file_list
     for file in files:
-        with open(file, "r") as file:
+        with open(f"jsoninfo_keys/{file}", "r") as file:
             qa_data = json.load(file)
         cur_data = qa_data['text']
         cur_file = qa_data['file_name']
