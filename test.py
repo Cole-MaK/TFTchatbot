@@ -1,5 +1,5 @@
 from sentence_transformers import SentenceTransformer
-from functions.functions import get_rag_keys
+from src.functions import get_rag_keys
 
 import pickle
 import json

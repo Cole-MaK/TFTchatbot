@@ -1,8 +1,8 @@
 import google
 from google import genai
 
-from functions.functions import get_filters
-from functions.tactics import *
+from src.functions import get_filters
+from src.tactics import *
 
 import json
 from dotenv import load_dotenv

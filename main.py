@@ -13,7 +13,7 @@ import time
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
-from functions.functions import get_rag_file
+from src.functions import get_rag_file
 
 load_dotenv()
 
