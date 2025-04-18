@@ -37,37 +37,19 @@ if filter_list:
 
 
     try:
-        dropdown_trigger = WebDriverWait(driver, 2).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[contains(@class, 'MuiInputBase-input MuiInput-input font-montserrat font-medium MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1jhxu0') and contains(@placeholder, 'Filter #1')]"))
-        )
-        dropdown_trigger.click()
+        for i, champion in enumerate(filter_list):
 
-        dropdown_options = WebDriverWait(driver, 2).until(
-            EC.element_to_be_clickable((By.XPATH, f"//span[contains(@class, 'font-montserrat leading-tight font-medium inline text-base pl-[6px]') and normalize-space(text()) = '{filter_list[0]}']"))
-        )
-        dropdown_options.click()
-
-        if len(filter_list) > 1:
             dropdown_trigger = WebDriverWait(driver, 2).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[contains(@class, 'MuiInputBase-input MuiInput-input font-montserrat font-medium MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1jhxu0') and contains(@placeholder, 'Filter #2')]"))
+                EC.element_to_be_clickable((By.XPATH, f"//input[contains(@class, 'MuiInputBase-input MuiInput-input font-montserrat font-medium MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1jhxu0') and contains(@placeholder, 'Filter #{i+1}')]"))
             )
             dropdown_trigger.click()
 
             dropdown_options = WebDriverWait(driver, 2).until(
-                EC.element_to_be_clickable((By.XPATH, f"//span[contains(@class, 'font-montserrat leading-tight font-medium inline text-base pl-[6px]') and normalize-space(text()) = '{filter_list[1]}']"))
+                EC.element_to_be_clickable((By.XPATH, f"//span[contains(@class, 'font-montserrat leading-tight font-medium inline text-base pl-[6px]') and normalize-space(text()) = '{champion}']"))
             )
             dropdown_options.click()
 
-        if len(filter_list) > 2:
-            dropdown_trigger = WebDriverWait(driver, 2).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[contains(@class, 'MuiInputBase-input MuiInput-input font-montserrat font-medium MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-1jhxu0') and contains(@placeholder, 'Filter #3')]"))
-            )
-            dropdown_trigger.click()
-
-            dropdown_options = WebDriverWait(driver, 2).until(
-                EC.element_to_be_clickable((By.XPATH, f"//span[contains(@class, 'font-montserrat leading-tight font-medium inline text-base pl-[6px]') and normalize-space(text()) = '{filter_list[2]}']"))
-            )
-            dropdown_options.click()
+        time.sleep(1)
 
         WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "div.pl-\\[6px\\].truncate"))
@@ -78,7 +60,6 @@ if filter_list:
         By.XPATH, "//div[contains(@class, 'pl-[6px') and contains(@class, 'truncate')]")
 
         names = [e.text for e in elements if e.text.strip()]
-        print(names)
 
         # games, play-rate, top4
         table = driver.find_elements(
@@ -125,7 +106,6 @@ if filter_list:
         datatable = pd.DataFrame(list(zip(names[0:len(games_list)],games_list, playrate_list, place_list, delta_list, top4_list, winP_list)),
         columns=['Champion','# of games','play rate','place','delta','top4','winP'])
         print(datatable)
-        # time.sleep(10)
 
 
     except Exception as e:
