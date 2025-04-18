@@ -5,6 +5,10 @@ import json
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
+from google import genai
+from google.genai.types import FunctionDeclaration, GenerateContentConfig, Part, Tool
+
+import os
 
 def get_rag_keys(file_list):
     '''
@@ -60,8 +64,68 @@ def get_rag_file(user_question, key_file):
         
         similarities[vector_name] = similarity_score
     print(similarities)
-    # key = max(similarities, key= similarities.get).split('_')[0]
+    
     top_2_keys = sorted(similarities, key=similarities.get, reverse=True)[:2]
     top_2 = [key.split('_')[0] for key in top_2_keys]
     return top_2
+    # key = max(similarities, key= similarities.get).split('_')[0]
     return key
+
+def get_filters(prompt):
+    '''
+    input (str): a user prompt that they ask they want to ask the LLM
+    return
+    filters (list): a list of 1-3 filters to use to search tactics.tools
+
+    '''
+    PROJECT_ID = "cmak-123"
+    LOCATION = "us-west1"
+
+    client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
+    api_key = os.getenv('API_KEY')
+
+    model="gemini-2.0-flash"
+
+    get_filters_function = {
+        "name": "get_filters",
+        "description": "Gets filter words for developer to use in a tft website",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filter_1": {
+                    "type": "string",
+                    "description": "A champion in tft. The champions consist of: Alistar, Annie, Aphelios, Aurora, Brand, Braum, Chogath, Darius, Draven, Dr. Mundo, Ekko, Elise, Fiddlesticks, Galio, Garen, Gragas, Graves, Illaoi, Jarvan IV, Jax, Jhin, Jinx, Kindred, Kobuko, Kogmaw, Leblanc, Leona, Mis Fortune, Mordekaiser, Morgana, Naafiri, Neeko, Nidalee, Poppy, Renekton, Rengar, Rhaast, Samira, Sejuani, Senna, Seraphine, Shaco, Shyvana, Skarner, Sylas, Twisted Fate, Urgot, Varus, vayne, Veigar, Vex, Vi, Viego, Xayah, Yuumi, Zac, Zed, Zeri, Ziggs, Zyra"
+                },
+                "filter_2": {
+                    "type": "string",
+                    "description": "If the user specifies another champion in tft use this filter, the same champion options apply. The champions consist of: Alistar, Annie, Aphelios, Aurora, Brand, Braum, Chogath, Darius, Draven, Dr. Mundo, Ekko, Elise, Fiddlesticks, Galio, Garen, Gragas, Graves, Illaoi, Jarvan IV, Jax, Jhin, Jinx, Kindred, Kobuko, Kogmaw, Leblanc, Leona, Mis Fortune, Mordekaiser, Morgana, Naafiri, Neeko, Nidalee, Poppy, Renekton, Rengar, Rhaast, Samira, Sejuani, Senna, Seraphine, Shaco, Shyvana, Skarner, Sylas, Twisted Fate, Urgot, Varus, vayne, Veigar, Vex, Vi, Viego, Xayah, Yuumi, Zac, Zed, Zeri, Ziggs, Zyra"
+                },
+                "filter_3": {
+                    "type": "string",
+                    "description": "If the user specifies a third champion in tft use this filter, the same champion options apply. The champions consist of: Alistar, Annie, Aphelios, Aurora, Brand, Braum, Chogath, Darius, Draven, Dr. Mundo, Ekko, Elise, Fiddlesticks, Galio, Garen, Gragas, Graves, Illaoi, Jarvan IV, Jax, Jhin, Jinx, Kindred, Kobuko, Kogmaw, Leblanc, Leona, Mis Fortune, Mordekaiser, Morgana, Naafiri, Neeko, Nidalee, Poppy, Renekton, Rengar, Rhaast, Samira, Sejuani, Senna, Seraphine, Shaco, Shyvana, Skarner, Sylas, Twisted Fate, Urgot, Varus, vayne, Veigar, Vex, Vi, Viego, Xayah, Yuumi, Zac, Zed, Zeri, Ziggs, Zyra"
+                }
+            },
+            "required": ["filter_1"]
+        }
+    }
+
+    tools = Tool(function_declarations=[get_filters_function])
+    config = GenerateContentConfig(tools = [tools])
+
+
+    chat = client.chats.create(
+        model=model,
+        config=config,
+    )
+
+    response = chat.send_message(prompt)
+    
+    if response.function_calls == None:
+        return None
+    else:
+        filters = []
+
+        for champion in response.function_calls[0].args.values():
+            filters.append(champion)
+        
+        return filters
