@@ -10,6 +10,7 @@ from google.genai.types import FunctionDeclaration, GenerateContentConfig, Part,
 
 import os
 
+
 def get_rag_keys(file_list):
     '''
     input:
@@ -80,9 +81,7 @@ def get_filters(prompt):
     '''
     PROJECT_ID = "cmak-123"
     LOCATION = "us-west1"
-
     client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
-    api_key = os.getenv('API_KEY')
 
     model="gemini-2.0-flash"
 
@@ -119,7 +118,7 @@ def get_filters(prompt):
     )
 
     response = chat.send_message(prompt)
-    
+    # print(response)
     if response.function_calls == None:
         return None
     else:
