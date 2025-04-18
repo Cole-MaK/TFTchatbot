@@ -175,3 +175,4 @@ cython_debug/
 test.py
 notes.txt
 rag_keys.pkl
+chromedriver

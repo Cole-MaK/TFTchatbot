@@ -47,13 +47,17 @@ for i, qa_pair in enumerate(qa_test):
     print(f"**Proposed Key**: {key}")
 
     # use key to access correct document
-    with open(f"jsoninfo_keys/{key}_info.json","r") as file:
+    with open(f"jsoninfo_keys/{key[0]}_info.json","r") as file:
         qa_data = json.load(file)['text']
+    
+    with open(f"jsoninfo_keys/{key[1]}_info.json","r") as file:
+        qa_data_2 = json.load(file)['text']
 
     prompt = f"""
     You are an expert in TFT Set 14. Use the following retrieved information to answer the question accurately.
 
-    {qa_data} 
+    {qa_data}
+    {qa_data_2} 
 
     Make sure to think before answering the user question.
 

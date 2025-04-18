@@ -60,5 +60,8 @@ def get_rag_file(user_question, key_file):
         
         similarities[vector_name] = similarity_score
     print(similarities)
-    key = max(similarities, key= similarities.get).split('_')[0]
+    # key = max(similarities, key= similarities.get).split('_')[0]
+    top_2_keys = sorted(similarities, key=similarities.get, reverse=True)[:2]
+    top_2 = [key.split('_')[0] for key in top_2_keys]
+    return top_2
     return key
