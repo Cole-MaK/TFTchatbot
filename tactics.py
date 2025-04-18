@@ -54,6 +54,7 @@ try:
     EC.presence_of_element_located((By.CSS_SELECTOR, "div.pl-\\[6px\\].truncate"))
     )
 
+    # get name column
     elements = driver.find_elements(
     By.XPATH, "//div[contains(@class, 'pl-[6px') and contains(@class, 'truncate')]")
 
