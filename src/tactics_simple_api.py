@@ -227,11 +227,13 @@ def get_champion_data(filter_list):
     #     elif filter_name in trait_mapping:
     #         filter_string += f"t-{trait_mapping[filter_name]}-{filter_tier}/"
 
-    for i in range(len(filter_list)):
+    for i in range(1, len(filter_list)):
         if filter_list[i][1] in champion_mapping:
             champion = filter_list[i][1]
             filter_string += f"u-{champion_mapping[champion]}"
             if i + 1 < len(filter_list) and 'champion_tier' not in filter_list[i+1][0]:
+                filter_string += f"-0/"
+            if i + 1 == len(filter_list):
                 filter_string += f"-0/"
         elif 'champion_tier' in filter_list[i][0]:
             champion_tier = filter_list[i][1]
@@ -251,16 +253,16 @@ def get_trait_data(filter_list):
     # Champions are u-<champion>-<tier>
     # Traits are t-<trait>-<tier>
     filter_string = ""
-    for filter in filter_list:
+    for i in range(1, len(filter_list)):
         
-        if filter[1] in champion_mapping:
-            champion = filter[1]
+        if filter_list[i][1] in champion_mapping:
+            champion = filter_list[i][1]
             filter_string += f"u-{champion_mapping[champion]}"
-        elif 'champion_tier' in filter[0]:
-            champion_tier = filter[1]
+        elif 'champion_tier' in filter_list[i][0]:
+            champion_tier = filter_list[i][1]
             filter_string += f"-{champion_tier}/"
         else:
-            filter_name = filter[1]
+            filter_name = filter_list[i][1]
             filter_string += f"t-{trait_mapping[filter_name]}/"
 
         # filter_name = filter["filter"]
