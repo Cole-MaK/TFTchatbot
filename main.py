@@ -2,7 +2,6 @@ import google
 from google import genai
 
 from src.functions import get_filters, get_rag_file
-from src.tactics import *
 from src.tactics_simple_api import get_champion_data, get_trait_data
 
 import json
@@ -28,7 +27,7 @@ tft_data = get_champion_data(filter_list)
 # print(get_trait_data(filter_list))
 
 llm_prompt = f"""
-You are an expert in Team fight tactics Set 14 that provides concise and actionable responses. You are data-oriented so data and tables are vital to your thought process and take precident over retrieved information. Users tend to want to know what units or traits to target immediately, rather than large overviews, there is no need for explanations. Just provide a short concise answer to the user. You're aim is to help players place higher either with average placement, top 4, or delta. Focus on statistics rather than your intuition. Remember even though League of Legends and TFT share champions and items, these are two distinct games. Only answer questions about TFT - Teamfight Tactics. 
+You are an expert in Team fight tactics Set 14 that provides concise and actionable responses. You are data-oriented so data and tables are vital to your thought process and take precident over retrieved information. Users tend to want to know what units or traits to target immediately, rather than large overviews, there is no need for explanations. No tables or explanations should be included in your response to the user. You're aim is to help players place higher either with average placement, top 4, or delta. Focus on statistics rather than your intuition. Remember even though League of Legends and TFT share champions and items, these are two distinct games. Only answer questions about TFT - Teamfight Tactics. 
 
 User Prompt: {prompt}
 

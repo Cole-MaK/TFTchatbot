@@ -102,7 +102,7 @@ def get_filters(prompt):
             "properties": {
                 "filter_1": {
                     "type": "string",
-                    "description": f"A champion or trait in tft. The champions consist of: {champions}. The traits consist of: {traits}"
+                    "description": f"A champion or trait in tft. The champions consist of: {champions}. The traits consist of: {traits}. Filters much match a champion or a trait exactly for you to return a valid filter."
                 },
                 "champion_tier_1": {
                     "type":"string",
@@ -110,7 +110,7 @@ def get_filters(prompt):
                 },
                 "filter_2": {
                     "type": "string",
-                    "description": f"If the user specifies another champion or trait in tft use this filter, the same champion options apply. The champions consist of: {champions}. The traits consist of {traits}"
+                    "description": f"If the user specifies another champion or trait in tft use this filter, the same champion options apply. The champions consist of: {champions}. The traits consist of {traits}. Filters much match a champion or a trait exactly for you to return a valid filter."
                 },
                 "champion_tier_2": {
                     "type":"string",
@@ -118,7 +118,7 @@ def get_filters(prompt):
                 },
                 "filter_3": {
                     "type": "string",
-                    "description": f"If the user specifies a third champion or trait in tft use this filter, the same champion options apply. The champions consist of: {champions}. The traits consist of {traits}"
+                    "description": f"If the user specifies a third champion or trait in tft use this filter, the same champion options apply. The champions consist of: {champions}. The traits consist of {traits}. Filters much match a champion or a trait exactly for you to return a valid filter."
                 },
                 "champion_tier_3": {
                     "type":"string",

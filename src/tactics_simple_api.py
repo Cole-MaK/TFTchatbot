@@ -233,6 +233,8 @@ def get_champion_data(filter_list):
             filter_string += f"u-{champion_mapping[champion]}"
             if i + 1 < len(filter_list) and 'champion_tier' not in filter_list[i+1][0]:
                 filter_string += f"-0/"
+            if i + 1 == len(filter_list):
+                filter_string += f"-0/"
         elif 'champion_tier' in filter_list[i][0]:
             champion_tier = filter_list[i][1]
             filter_string += f"-{champion_tier}/"
