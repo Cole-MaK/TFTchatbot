@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 
 from google import genai
-from google.genai.types import FunctionDeclaration, GenerateContentConfig, Part, Tool
+from google.genai.types import FunctionDeclaration, GenerateContentConfig, ToolConfig, Part, Tool, FunctionCallingConfig
 
 import os
 
@@ -23,11 +23,9 @@ def get_filters(prompt):
 
     traits = "3 Anima Squad, 5 Anima Squad, 7 Anima Squad, 10 Anima Squad, 2 BoomBot, 4 BoomBot, 6 BoomBot, 2 Cyberboss, 3 Cyberboss, 4 Cyberboss, 3 Cypher, 4 Cypher, 5 Cypher, 1 Divinicorp, 2 Divinicorp, 3 Divinicorp, 4 Divinicorp, 5 Divinicorp, 6 Divinicorp, 7 Divinicorp, 3 Exotech, 5 Exotech, 7 Exotech, 10 Exotech, 1 God of the Net, 2 Golden Ox, 4 Golden Ox, 6 Golden Ox, 3 Nitro, 4 Nitro, 1 Overlord, 1 Soul Killer, 3 Street Demon, 5 Street Demon, 7 Street Demon, 10 Street Demon, 3 Syndicate, 5 Syndicate, 7 Syndicate, 1 Virus, 2 A.M.P., 3 A.M.P., 4 A.M.P., 5 A.M.P., 2 Bastion, 4 Bastion, 6 Bastion, 2 Bruiser, 4 Bruiser, 6 Bruiser, 2 Dynamo, 3 Dynamo, 4 Dynamo, 2 Executioner, 3 Executioner, 4 Executioner, 5 Executioner, 2 Marksman, 4 Marksman, 2 Rapidfire, 4 Rapidfire, 6 Rapidfire, 2 Slayer, 4 Slayer, 6 Slayer, 2 Strategist, 3 Strategist, 4 Strategist, 5 Strategist, 2 Techie, 4 Techie, 6 Techie, 8 Techie, 2 Vanguard, 4 Vanguard, 6 Vanguard"
 
-    model="gemini-2.0-flash"
-
     get_filters_function = {
         "name": "get_filters",
-        "description": "Gets filter words for developer to use in a tft website",
+        "description": "This function should only be called if the prompt asks what is good with something. Gets filter words for developer to use in a tft website.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -55,14 +53,25 @@ def get_filters(prompt):
                     "type":"string",
                     "description": f"If the previous filter_3 includes a champions from this list: {champions}, the user can include a champion's star level if a number comes after a champion name. The options are 0 if nothing is specified, 1, 2, or 3."
                 },
+                "tab": {
+                    "type":"string",
+                    "description": 'Decide what tab of information to pull from a website. Typically when champion or champions is mentioned pick units. The options are units or traits'
+                }
             },
-            "required": ["filter_1"]
+            "required": ["filter_1", "tab"]
         }
     }
 
-    tools = Tool(function_declarations=[get_filters_function])
-    config = GenerateContentConfig(tools = [tools])
 
+    tools = [Tool(function_declarations=[get_filters_function])]
+    config = {
+    "tools": tools,
+    "automatic_function_calling": {"disable": False},
+    # Force the model to call 'any' function, instead of chatting.
+    "tool_config": {"function_calling_config": {"mode": "AUTO"}},
+}
+
+    model="gemini-2.0-flash"
 
     chat = client.chats.create(
         model=model,
@@ -70,7 +79,7 @@ def get_filters(prompt):
     )
     # total tokens is around 2.5k
     response = chat.send_message(prompt)
-    
+    print(response.candidates[0].content.parts)
     # print(response)
     if response.function_calls == None:
         return None
@@ -80,6 +89,6 @@ def get_filters(prompt):
         for filter in response.function_calls[0].args.items():
             filters.append(filter)
         
-        order = {'filter_1': 0, 'champion_tier_1': 1, "filter_2": 2, 'champion_tier_2':3, 'filter_3': 4, 'champion_tier_3':5}
+        order = {'tab':0, 'filter_1': 1, 'champion_tier_1': 2, "filter_2": 3, 'champion_tier_2':4, 'filter_3': 5, 'champion_tier_3':6}
         sorted_filters = sorted(filters, key=lambda x: order.get(x[0], float('inf')))
         return sorted_filters
