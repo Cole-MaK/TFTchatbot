@@ -1,10 +1,3 @@
-from sentence_transformers import SentenceTransformer
-import pickle
-import json
-
-from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
-
 from dotenv import load_dotenv
 
 from google import genai
@@ -17,68 +10,6 @@ load_dotenv()
 api_key = os.getenv('API_KEY')
 
 client = genai.Client(api_key=api_key)
-
-def get_rag_keys(file_list):
-    '''
-    input:
-    file_list (list): A list of file names that are meant to be used as keys for full rag documents. Keys should be in json with "file_name" and "text"
-
-    return: None
-
-    Output: a pkl file with vector embeddings of document keys
-    '''
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-
-    file_vectors = {
-
-    }
-
-    files = file_list
-    for file in files:
-        with open(f"jsoninfo_keys/{file}", "r") as file:
-            qa_data = json.load(file)
-        cur_data = qa_data['text']
-        cur_file = qa_data['file_name']
-
-        embedding = model.encode(cur_data)
-
-        file_vectors[cur_file] = embedding
-
-    with open('rag_keys.pkl','wb') as file:
-        pickle.dump(file_vectors, file)
-
-def get_rag_file(user_question, key_file, top_n=1):
-    '''
-    input:
-    user_question (str): user prompt
-    key_file: dictionary of vector embeddings of key documents
-    top_n (int): number of top rag files that we want to obtain
-
-    output:
-    return key: name to get document
-    '''
-
-    model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
-
-    embedding = model.encode(user_question)
-
-    with open(key_file, 'rb') as file:
-        rag_vectors = pickle.load(file)
-
-    similarities = {}
-
-    for vector_name, vector in rag_vectors.items():
-        embeddings = [vector, embedding]
-        similarity_score = cosine_similarity(embeddings)[0][1]
-        
-        similarities[vector_name] = similarity_score
-    print(similarities)
-    
-    top_keys = sorted(similarities, key=similarities.get, reverse=True)[:top_n]
-    keys = [key.split('_')[0] for key in top_keys]
-    return keys
-    key = max(similarities, key= similarities.get).split('_')[0]
-    return key
 
 def get_filters(prompt):
     '''
