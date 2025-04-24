@@ -139,9 +139,10 @@ def frontend_func(prompt):
     api_key = os.getenv('API_KEY')
 
     client = genai.Client(api_key=api_key)
-
+    
+    model = "gemini-2.5-flash-preview-04-17"
     response = client.models.generate_content(
-        model="gemini-2.0-flash", 
+        model=model, 
         contents=llm_prompt).text
 
     return(response)
