@@ -216,16 +216,6 @@ def get_champion_data(filter_list):
     # Champions are u-<champion>-<tier>
     # Traits are t-<trait>-<tier>
     filter_string = ""
-    
-    # for filter in filter_list:
-
-    #     filter_name = filter["filter"]
-    #     filter_tier = filter["tier"]
-        
-    #     if filter_name in champion_mapping:
-    #         filter_string += f"u-{champion_mapping[filter_name]}-{filter_tier}/"
-    #     elif filter_name in trait_mapping:
-    #         filter_string += f"t-{trait_mapping[filter_name]}-{filter_tier}/"
 
     for i in range(1, len(filter_list)):
         if filter_list[i][1] in champion_mapping:
@@ -265,14 +255,6 @@ def get_trait_data(filter_list):
             filter_name = filter_list[i][1]
             filter_string += f"t-{trait_mapping[filter_name]}/"
 
-        # filter_name = filter["filter"]
-        # filter_tier = filter["tier"]
-        
-        # if filter_name in champion_mapping:
-        #     filter_string += f"u-{champion_mapping[filter_name]}-{filter_tier}/"
-        # elif filter_name in trait_mapping:
-        #     filter_string += f"t-{trait_mapping[filter_name]}-{filter_tier}/"
-            
     url = (base_url + filter_string).rstrip('/')
     response = requests.get(url)
     response_json = response.json()

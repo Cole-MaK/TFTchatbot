@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from src.function_call import frontend_func
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -11,8 +12,12 @@ def chat():
     
     # For now, just return a default Latin response
     response = {
-        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit test."
     }
+    response = {
+        "message": f"{frontend_func(user_message)}"
+    }
+    print(response)
     
     return jsonify(response)
 

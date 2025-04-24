@@ -55,7 +55,7 @@ The "delta" is the average place change with larger negative deltas being better
 Again here is the question you are answering: {prompt}
 """
 
-# print(llm_prompt)
+print(llm_prompt)
 api_key = os.getenv('API_KEY')
 
 client = genai.Client(api_key=api_key)
