@@ -5,7 +5,9 @@ import './App.css';
 const SUGGESTED_MESSAGES = [
   "What traits are good with 6 vanguard?",
   "What front line champions do you play with 3 star Twisted Fate?",
-  "Does Viego or Renekton have a higher win rate with 7 anima squad?"
+  "Does Viego or Renekton have a higher win rate with 7 anima squad?",
+  "What are good non boom bot champions to play in 6 boom bots?",
+  "Is 4 techie or 4 strategist better with 7 street demon?"
 ];
 
 function App() {
