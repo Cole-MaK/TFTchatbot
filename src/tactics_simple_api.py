@@ -243,17 +243,21 @@ def get_trait_data(filter_list):
     # Champions are u-<champion>-<tier>
     # Traits are t-<trait>-<tier>
     filter_string = ""
+    
     for i in range(1, len(filter_list)):
-        
         if filter_list[i][1] in champion_mapping:
             champion = filter_list[i][1]
             filter_string += f"u-{champion_mapping[champion]}"
+            if i + 1 < len(filter_list) and 'champion_tier' not in filter_list[i+1][0]:
+                filter_string += f"-0/"
+            if i + 1 == len(filter_list):
+                filter_string += f"-0/"
         elif 'champion_tier' in filter_list[i][0]:
             champion_tier = filter_list[i][1]
             filter_string += f"-{champion_tier}/"
         else:
             filter_name = filter_list[i][1]
-            filter_string += f"t-{trait_mapping[filter_name]}/"
+            filter_string += f"t-{trait_mapping[filter_name]}"
 
     url = (base_url + filter_string).rstrip('/')
     response = requests.get(url)
