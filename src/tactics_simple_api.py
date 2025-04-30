@@ -167,7 +167,7 @@ champion_mapping = {
 champion_mapping_reverse = {v: k for k, v in champion_mapping.items()}
 trait_mapping_reverse = {v: k for k, v in trait_mapping.items()}
 
-def _post_process_champion(data, top_n=10):
+def _post_process_champion(data, top_n=15):
     # Sort by win rate
     output = []
     for row in data:
@@ -185,7 +185,7 @@ def _post_process_champion(data, top_n=10):
     output.sort(key=lambda x: x["count"], reverse=True)
     return output[:top_n]
 
-def _post_process_trait(data, top_n=10):
+def _post_process_trait(data, top_n=15):
     # Sort by win rate
     output = []
     for row in data:
@@ -235,7 +235,7 @@ def get_champion_data(filter_list):
     url = (base_url + filter_string).rstrip('/')
     response = requests.get(url)
     response_json = response.json()
-    filtered_list = _post_process_champion(response_json['units'], top_n=10)
+    filtered_list = _post_process_champion(response_json['units'])
     return _to_string(filtered_list)
 
 def get_trait_data(filter_list):
@@ -262,5 +262,5 @@ def get_trait_data(filter_list):
     url = (base_url + filter_string).rstrip('/')
     response = requests.get(url)
     response_json = response.json()
-    filtered_list = _post_process_trait(response_json['traits'], top_n=10)
+    filtered_list = _post_process_trait(response_json['traits'])
     return _to_string(filtered_list)
