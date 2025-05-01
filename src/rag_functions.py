@@ -32,7 +32,7 @@ def get_rag_keys(file_list):
 
         file_vectors[cur_file] = embedding
 
-    with open('rag_keys2.pkl','wb') as file:
+    with open('rag_keys.pkl','wb') as file:
         pickle.dump(file_vectors, file)
 
 def get_rag_file(user_question, key_file, top_n=1):
