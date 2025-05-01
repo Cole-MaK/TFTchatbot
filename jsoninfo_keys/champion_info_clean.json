@@ -1,0 +1,118 @@
+{"file_name": "champion_info",
+"base_info":"TFT Set 14: Cyber City Update TFT 14. AD means attack damage. AP meants ability power. MR means magic resist. When asked about Shields of Durability, make sure to understand that they are different terms and are not interchangable.",
+"info":[
+{"Alister": {
+    "cost":"1 gold", 
+    "traits": "Golden Ox, Bruiser", 
+    "passive": "Reduce all incoming damage by 10/15/25 (scaling with AP).", "ability":"Deal 200/300/450 magic damage (scaling with AP) to the current target and Stun them for 2 seconds."}},
+{"Annie":{
+    "cost": "4 gold", 
+    "traits":"Golden Ox, A.M.P.", 
+    "passive":"None",
+    "ability": "Throw a fireball at the current target that deals 175/265/790 magic damage (scaling with AP) and mini-fireballs split between the target and 2 nearby enemies that deal 40/60/180 magic damage (scaling with AP) each. Every 4 casts, instead, summon Tibbers next to the current target, dealing 270/405/1215 magic damage (scaling AP) to enemies within 1 hex."}},
+{"Aphelios":{
+    "cost":"4 gold",
+    "traits":"Golden Ox, Marksman",
+    "passive":"None",
+    "ability":"Fire a moon blast at the largest group of enemies that deals  physical damage (scaling AD & AP) to enemies within 2 hexes. Equip 4 Chakram, plus 1 more for each enemy hit by the blast, that last for 6 attacks and deal 0.07/0.07/0.2 bonus physical (scaling with AD) damage each."}},
+{"Aurora":{
+    "cost":"5 gold",
+    "traits":"Dynamo, Anima Squad",
+    "passive":"None",
+    "ability":"On first cast, swap places with the left-most champion on your bench and continue fighting. That champion gains 0.5/1/10 Attack Speed (scaling AP). If the swapped champion dies, return to the board. Teleport to hit the most enemies in a line, dealing 80/175/1111 magic damage (scaling with AP) to each one, plus 500/900/7777 magic damage (scaling with AP) split between all enemies hit. Aurora cannot swap places with another Aurora."}},
+{"Brand":{
+    "cost":"4 gold",
+    "traits":"Street Demon, Techie",
+    "passive":"None",
+    "ability":"Throw a paint bomb at the largest group of enemies within hexes, dealing 200/300/900 magic damage (scaling with AP) to enemies within 1 hex and 100/150/450 magic damage (scaling with AP) to the nearest 4 enemies."}},
+{"Braum":{
+    "cost":"3 gold",
+    "traits":"Syndicate, Vanguard",
+    "passive":"None",
+    "ability":"Gain 450/475/500 Shield (scaling with AP & Health) for 4 seconds. When it breaks, deal 100/150/240 magic damage (scaling with AP)to the 3 closest enemies and Chill them for 3 seconds. Kingpin bonus: Gain 20/100 Armor and Magic Resist. Upgraded Kingpin bonus: Every 4/2 seconds, Braum's next attack deals 1 + 1 + 0.1 bonus magic damage (scaling with Armor & MR & Health)."}},
+{"Chogath":{
+    "cost":"4 gold",
+    "traits":"Boombots, Bruiser",
+    "passive":"None",
+    "ability":"Fire a disorienting sound blast in a cone, dealing 100/150/1500 + 0.03 magic damage (scaling with AP & Health). Gain max Health (scaling with AP & Health), get bigger, and increase the size of future sound blasts."}},
+{"Darius":{
+    "cost":"2 gold",
+    "traits":"Syndicate, Bruiser.",
+    "passive":"None",
+    "ability":"Heal 0.05 + 200/220/240 Health (scaling with AP & Health), then deal 2 physical damage (scaling with AD) and 0.2% Sunder enemies within 1 hex for 6 seconds. Kingpin bonus: Increase Ability range to 2 hexes. Damage reduced by 0.1% per hex away. Heal 0.02 + 50 Health (scaling with Health) for each enemy hit. Upgraded Kingpin bonus: Increase Ability range to 4 hexes. Damage reduced by 0.1% per hex away. Heal 0.02 + 50 (Health) Health for each enemy hit."}},
+{"Dr. Mundo":{
+    "cost":"1 gold",
+    "traits":"Street Demon, Bruiser, Slayer",
+    "passive":"Gain 0.3% more max Health from all sources.",
+    "ability":"Flex, healing 0.02 + 75/115/175 Health (scaling with Health & AP), then deal 1.3 + 0.2 physical damage (scaling with Health & AP) to the current target."}},
+{"Draven":{
+    "cost":"3 gold",
+    "traits":"Cypher, Rapidfire",
+    "passive":"None",
+    "ability":"Hurl two massive axes at the most enemies in a line, dealing 3.3/3.3/3.4 + 30/45/80 physical damage (scaling with AD & AP) before returning. Damage is reduced by 0.2% for each enemy hit."}},
+{"Ekko":{
+    "cost":"2 gold",
+    "traits":"Street Demon, Strategist",
+    "passive":"None",
+    "ability":"Heal 280/340/425 Health (scaling with AP) and deal 180/270/410 magic damage (scaling with AP)to the current target."}},
+{"Elise":{
+    "cost":"3 gold",
+    "traits":"Nitro, Dynamo",
+    "passive":"None",
+    "ability":"Fire 4 lasers at the current target and 4 more split between the nearest 2 enemies, each dealing 54/81/140 magic damage (scaling with AP) and reducing Magic Resist by 6 for the rest of combat."}},
+{"Fiddlesticks":{
+    "cost":"3 gold",
+    "traits":"BoomBots, Techie",
+    "passive":"None",
+    "ability":"For 3 seconds, tether to the closest 3 enemies, dealing 240/360/575 magic damage (scaling with AP) per second split between them. Tethers apply 0.2% Shred and heal Fiddlesticks for 0.15% of the damage dealt."}},
+{"Galio":{
+    "cost":"3 gold",
+    "traits":"Cypher, Bastion",
+    "passive":"None",
+    "ability":"Gain Durability (scaling with AP) for 3 seconds. Afterwards, heal 250/300/400 Health (scaling with AP) and send a whirlwind at the enemy within 3 hexes that dealt the most damage to Galio during that time. It deals 150/225/335 magic damage (scaling with AP) and Stuns for 1.5 seconds."}},
+{"Garen":{
+    "cost":"5 gold",
+    "traits":"God of the Net",
+    "passive":"None",
+    "ability":"Gain 700/1000/5000 Shield (scaling with AP) for 2 seconds. Deal 6.5/6.5/30 physical damage (scaling with AD) to the current target and send a wave that deals 2.6/2.6/15 physical damage (scaling with AD) to enemies hit. If the wave hits 2 or fewer enemies, gain 50 Mana."}},
+{"Gragas":{
+    "cost":"3 gold",
+    "traits":"Bruiser, Divinicorp",
+    "passive":"None",
+    "ability":"Heal 300/325/350 + 0.1 Health (scaling with Health & AP), then throw a cask at the largest group of enemies within 3 hexes, dealing 150/225/335 magic damage (scaling with AP) to enemies within 1 hex."}},
+{"Graves":{
+    "cost":"2 gold",
+    "traits":"Golden Ox, Executioner",
+    "passive":"Attacks fire 5 projectiles in a cone that deal 0.35 physical damage (scaling with AD) each. Graves casts every 2 attacks.",
+    "ability":"Dash next to the target and quickly fire 2 empowered shells that deal 6/9/16 + 0.4/0.4/0.45 physical damage (scaling with AD & AP) per projectile."}},
+{"Illaoi":{
+    "cost":"2 gold",
+    "traits":"Anima Squad, Bastion",
+    "passive":"None",
+    "ability":"Heal 350/400/500 Health (scaling with AP). Deal 150/225/350 magic damage (scaling with AP) the current target and 60/90/140 (scaling with AP) to enemies within 1-hex. Reduce their Magic Resist by 15 for the rest of combat."}},
+{"Jarvan IV":{
+    "cost":"3 gold",
+    "traits":"Golden Ox, Slayer, Vanguard",
+    "passive":"None",
+    "ability":"Strike the most enemies in a semi-circle, gaining 270/300/350 Shield (scaling with AP) for 4 seconds plus 30/50/80 (scaling with AP) per enemy hit. Deal 1.2 physical damage (scaling with AD) to enemies hit and reduce their Armor by 15/18/20 for the rest of combat."}},
+{"Jax":{
+    "cost":"1 gold",
+    "traits":"Exotech, Bastion",
+    "passive":"None",
+    "ability":"Gain 350/425/525 Shield (scaling with AP) for 4 seconds and deal 110/165/250 magic damage (scaling with AP) to adjacent enemies."}},
+{"Jhin":{
+    "cost":"2 gold",
+    "traits":"Exotech, Marksman, Dynamo",
+    "passive":"None",
+    "ability":"Fire a bouncing grenade that hits four enemies, dealing 1.44 physical damage (scaling with AD) and 0.2% Sundering them for 4.4 seconds (scaling with AP). The fourth bounce returns to the initial target and deals 3.84 physical damage (scaling with AD)."}},
+{"Jinx":{
+    "cost":"3 gold",
+    "traits":"Street Demon, Marksman",
+    "passive":"None",
+    "ability":"Fire rockets at random enemies within 2 hexes of the current target. Each rocket deals 1.4/1.4/1.5 physical damage (scaling with AD). Each cast fires an additional rocket."}},
+{"Kindred":{
+    "cost":"1 gold",
+    "traits":"Nitro, Marksman, Rapidfire",
+    "passive":"None",
+    "ability":"Fire wolf at the current target, dealing 5.2 + 20/30/45 physical damage (scaling with AD). Overkill damage bounces to the nearest enemy."}}
+]}
