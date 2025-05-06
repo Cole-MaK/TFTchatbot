@@ -60,7 +60,6 @@ def get_rag_file(user_question, key_file, top_n=1):
         similarity_score = cosine_similarity(embeddings)[0][1]
         
         similarities[vector_name] = similarity_score
-    print(similarities)
     
     top_keys = sorted(similarities, key=similarities.get, reverse=True)[:top_n]
     keys = [key.split('_')[0] for key in top_keys]

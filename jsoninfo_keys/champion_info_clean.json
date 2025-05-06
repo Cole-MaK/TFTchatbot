@@ -4,7 +4,8 @@
 {"Alister": {
     "cost":"1 gold", 
     "traits": "Golden Ox, Bruiser", 
-    "passive": "Reduce all incoming damage by 10/15/25 (scaling with AP).", "ability":"Deal 200/300/450 magic damage (scaling with AP) to the current target and Stun them for 2 seconds."}},
+    "passive": "Reduce all incoming damage by 10/15/25 (scaling with AP).", 
+    "ability":"Deal 200/300/450 magic damage (scaling with AP) to the current target and Stun them for 2 seconds."}},
 {"Annie":{
     "cost": "4 gold", 
     "traits":"Golden Ox, A.M.P.", 
