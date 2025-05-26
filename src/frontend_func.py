@@ -10,6 +10,7 @@ from src.rag_functions import *
 
 def frontend_func(contents, client, client_config):
 
+    # obtains user question from content list
     prompt = contents[-1]["parts"][0]['text']
 
     key = get_rag_file(user_question=prompt, key_file="rag_keys.pkl", top_n=1)
