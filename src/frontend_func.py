@@ -1,9 +1,7 @@
 from google import genai
 from google.genai.types import FunctionDeclaration, GenerateContentConfig, ToolConfig, Part, Tool, FunctionCallingConfig
 
-import os
 import json
-from dotenv import load_dotenv
 
 from src.tactics_simple_api import get_champion_data, get_trait_data
 from src.rag_functions import *

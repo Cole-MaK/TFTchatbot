@@ -1,12 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+
 from src.frontend_func import frontend_func
 from src.function_call import filter_tool
+
 import os
-import google
+from dotenv import load_dotenv
+
 from google import genai
 from google.genai.types import Tool
-from dotenv import load_dotenv
+
 
 
 app = Flask(__name__)
