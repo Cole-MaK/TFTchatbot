@@ -1,7 +1,7 @@
 import google
 from google import genai
 
-from src.function_call import get_filters
+
 from src.tactics_simple_api import get_champion_data, get_trait_data
 from src.rag_functions import *
 
@@ -27,8 +27,7 @@ rag_prompt = f"""
 
     Decide if you are able to answer the user question with this information. If so then there is no need to call a function or tool but if you can not then you also have access to function calling or tools.
 """
-
-filter_list = get_filters(rag_prompt)
+filter_list = []
 print(filter_list)
 if isinstance(filter_list, list):
     if filter_list[0][1] == 'units':
