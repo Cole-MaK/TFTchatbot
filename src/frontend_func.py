@@ -90,7 +90,7 @@ The "delta" is the average place change with larger negative deltas being better
 Again here is the question you are answering: {prompt}
 Do not start your response with "Based on the data" or anything similar. Do not mention anything to do with the fact that you have access to data since the user can not see the results of the function call so do not reference it. Your response should seem like you already have knowledge of the statistics.
         """
-        
+
         contents.append({"parts": [{"text":llm_prompt}], "role":"user"})
         
         response = client_model.generate(contents)

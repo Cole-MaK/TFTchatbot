@@ -18,7 +18,7 @@ import requests
 # For example, for 5 divinicorp and 2 star garen, the url is:
 # https://d3.tft.tools/explorer-data/15080/1/u-TFT14_Garen-2/t-TFT14_Divinicorp-5/
 
-base_url = "https://d3.tft.tools/explorer-data/15080/1/"
+base_url = "https://d3.tft.tools/explorer-data/15100/1/"
 
 trait_mapping = {
     '3 Anima Squad': 'TFT14_AnimaSquad-1',
