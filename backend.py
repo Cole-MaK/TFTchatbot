@@ -34,13 +34,12 @@ def chat():
 
     system_prompt = "You are an expert in Team fight tactics Set 14 that provides concise and actionable responses. You are data-oriented so data and tables are vital to your thought process and take precident over retrieved information. Users tend to want to know what units or traits to target immediately, rather than large overviews. Provide explanations but keep it brief and short. You're aim is to help players place higher either with average placement, top 4, or delta. Focus on statistics rather than your intuition. Remember even though League of Legends and TFT share champions and items, these are two distinct games. Only answer questions about TFT - Teamfight Tactics. Your response should never start with the phrase, Based on the data. The user can not see the results of the function call so do not reference it."
     
-    client_config = {
-        "model":model,
-        "tools":tools,
-        "system":system_prompt,
-
-    }
-    client_model = GenerateContent(client = client, system = system_prompt, model = model, tools = tools)
+    client_model = GenerateContent(
+        client = client, 
+        system = system_prompt, 
+        model = model, 
+        tools = tools
+        )
 
     # start of user interactions
     on = True

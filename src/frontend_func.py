@@ -29,22 +29,13 @@ def frontend_func(contents, client_model):
 
     contents.append({"parts": [{"text":rag_prompt}], "role":"user"})
     
-    # will either return a response or a list of filters to be used in tactics
-    # response = client.models.generate_content(
-    #     model=client_config['model'], 
-    #     contents=contents, 
-    #     config=GenerateContentConfig(
-    #         system_instruction = client_config['system'],
-    #         tools = client_config['tools']),
-    # )
-
     response = client_model.generate(contents)
+
     # first case if the model is able to answer user question with rag information
     if response.function_calls == None:
         return response.candidates[0].content.parts[0].text
     
-    # second case if the model decided to function call to get filters for tactics
-    # this 'else' case creates a sorted filter list 
+    # second case if the model decided to function call to get filters for tactics | this 'else' case creates a sorted filter list 
     else:
         filters = []
 
@@ -99,15 +90,9 @@ The "delta" is the average place change with larger negative deltas being better
 Again here is the question you are answering: {prompt}
 Do not start your response with "Based on the data" or anything similar. Do not mention anything to do with the fact that you have access to data since the user can not see the results of the function call so do not reference it. Your response should seem like you already have knowledge of the statistics.
         """
+        
         contents.append({"parts": [{"text":llm_prompt}], "role":"user"})
         
-#         response = client.models.generate_content(
-#             model=client_config['model'], 
-#             contents=contents, 
-#             config=GenerateContentConfig(
-#                 system_instruction = client_config['system'],
-#                 tools = client_config['tools']),
-# )
         response = client_model.generate(contents)
 
         return response.candidates[0].content.parts[0].text
