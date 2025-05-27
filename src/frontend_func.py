@@ -3,10 +3,11 @@ from google.genai.types import FunctionDeclaration, GenerateContentConfig, ToolC
 
 import json
 
+from src.client import GenerateContent
 from src.tactics_simple_api import get_champion_data, get_trait_data
 from src.rag_functions import *
 
-def frontend_func(contents, client, client_config):
+def frontend_func(contents, client_model):
 
     # obtains user question from content list
     prompt = contents[-1]["parts"][0]['text']
@@ -29,13 +30,15 @@ def frontend_func(contents, client, client_config):
     contents.append({"parts": [{"text":rag_prompt}], "role":"user"})
     
     # will either return a response or a list of filters to be used in tactics
-    response = client.models.generate_content(
-        model=client_config['model'], 
-        contents=contents, 
-        config=GenerateContentConfig(
-            system_instruction = client_config['system'],
-            tools = client_config['tools']),
-)
+    # response = client.models.generate_content(
+    #     model=client_config['model'], 
+    #     contents=contents, 
+    #     config=GenerateContentConfig(
+    #         system_instruction = client_config['system'],
+    #         tools = client_config['tools']),
+    # )
+
+    response = client_model.generate(contents)
     # first case if the model is able to answer user question with rag information
     if response.function_calls == None:
         return response.candidates[0].content.parts[0].text
@@ -98,11 +101,13 @@ Do not start your response with "Based on the data" or anything similar. Do not 
         """
         contents.append({"parts": [{"text":llm_prompt}], "role":"user"})
         
-        response = client.models.generate_content(
-            model=client_config['model'], 
-            contents=contents, 
-            config=GenerateContentConfig(
-                system_instruction = client_config['system'],
-                tools = client_config['tools']),
-)
+#         response = client.models.generate_content(
+#             model=client_config['model'], 
+#             contents=contents, 
+#             config=GenerateContentConfig(
+#                 system_instruction = client_config['system'],
+#                 tools = client_config['tools']),
+# )
+        response = client_model.generate(contents)
+
         return response.candidates[0].content.parts[0].text

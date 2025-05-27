@@ -3,6 +3,7 @@ from flask_cors import CORS
 
 from src.frontend_func import frontend_func
 from src.function_call import filter_tool
+from src.client import GenerateContent
 
 import os
 from dotenv import load_dotenv
@@ -39,6 +40,7 @@ def chat():
         "system":system_prompt,
 
     }
+    client_model = GenerateContent(client = client, system = system_prompt, model = model, tools = tools)
 
     # start of user interactions
     on = True
@@ -49,7 +51,7 @@ def chat():
         #append user question to chat history
         contents.append({"parts": [{"text":user_message}], "role":"user"})
         
-        llm_response = frontend_func(contents, client, client_config)
+        llm_response = frontend_func(contents, client_model)
 
         response = {
             "message": f"{llm_response}"
