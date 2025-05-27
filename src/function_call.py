@@ -42,4 +42,114 @@ def filter_tool():
         }
     }
 
-    return get_filters_function
+
+    tools = [Tool(function_declarations=[get_filters_function])]
+    config = {
+    "tools": tools,
+    "automatic_function_calling": {"disable": False},
+    # Force the model to call 'any' function, instead of chatting.
+    "tool_config": {"function_calling_config": {"mode": "AUTO"}},
+}
+
+    chat = client.chats.create(
+        model=model,
+        config=config,
+    )
+    # total tokens is around 2.5k
+    response = chat.send_message(prompt)
+    print(response)
+    # Function name, arguments
+    # IF it's no function call returned, Final Answer
+    print("Hey Miami, how we feelin'")
+
+    if response.function_calls == None:
+        return response.candidates[0].content.parts[0].text
+    
+    # else, 
+    else:
+        filters = []
+
+        for filter in response.function_calls[0].args.items():
+            filters.append(filter)
+        
+        order = {'tab':0, 'filter_1': 1, 'champion_tier_1': 2, "filter_2": 3, 'champion_tier_2':4, 'filter_3': 5, 'champion_tier_3':6}
+        sorted_filters = sorted(filters, key=lambda x: order.get(x[0], float('inf')))
+        return sorted_filters
+
+def frontend_func(prompt):
+
+    key = get_rag_file(user_question=prompt, key_file="rag_keys.pkl", top_n=1)
+
+    with open(f"jsoninfo_keys/{key[0]}_info.json","r") as file:
+            rag_data = json.load(file)['text']
+
+    rag_prompt = f"""
+        You are an expert in Team fight tactics Set 14 that provides concise and actionable responses. Remember even though League of Legends and TFT share champions and items, these are two distinct games. Only answer questions about TFT - Teamfight Tactics. 
+
+        User Prompt: {prompt}
+
+        Here is some retrieved information: {rag_data}
+
+        Decide if you are able to answer the user question with this information. If so then there is no need to call a function or tool but if you can not then you also have access to function calling or tools.
+    """
+    filter_list = get_filters(rag_prompt)
+    print(filter_list)
+    if isinstance(filter_list, str):
+        return(filter_list)
+
+    if isinstance(filter_list, list):
+        if filter_list[0][1] == 'units':
+
+            tft_data = get_champion_data(filter_list)
+
+            with open(f"jsoninfo_keys/champion_info.json","r") as file:
+                rag_data = json.load(file)['text']
+
+        elif filter_list[0][1] == 'traits':
+
+            tft_data = get_trait_data(filter_list)
+
+            with open(f"jsoninfo_keys/synergy_info.json","r") as file:
+                rag_data = json.load(file)['text']
+        
+        # creating string to provide context for the table obtained from tactics.tools
+        table_string = "This is the table, tft_data, with the aggregated statistics for the "
+        for item in filter_list:
+            if item[0] == 'tab':
+                table_string += f"{item[1]} when playing "
+            elif 'filter' in item[0]:
+                table_string += f"{item[1]}, "
+        table_string = table_string[:-2]
+
+        llm_prompt = f"""
+Use the information provided to answer the following user question: {prompt}
+
+Here is some extra retrieved information: {rag_data}.
+Use this data as a supplement to the following table information.
+
+{table_string}: 
+{tft_data}
+
+The column "Name" is the name of the champion and the games that have been played with that champion.
+The column "number of games" is how many games that champion has been played. 
+The "win rate" column is the percentage of games won in decimals.
+The "top 4 rate" is the pecentage of games that a player places top 4 in decimals.
+The "average placement" is the average place that a player places from 1 to 8 with 1 being the best so a lower number is prefered.
+The "delta" is the average place change with larger negative deltas being better since it brings the average placement closer to 0. Delta is one of the most important factors.
+
+
+Again here is the question you are answering: {prompt}
+Do not start your response with "Based on the data" or anything similar. Do not mention anything to do with the fact that you have access to data since the user can not see the results of the function call so do not reference it. Your response should seem like you already have knowledge of the statistics.
+        """
+
+        print(llm_prompt)
+
+        system_prompt = "You are an expert in Team fight tactics Set 14 that provides concise and actionable responses. You are data-oriented so data and tables are vital to your thought process and take precident over retrieved information. Users tend to want to know what units or traits to target immediately, rather than large overviews. Provide explanations but keep it brief and short. You're aim is to help players place higher either with average placement, top 4, or delta. Focus on statistics rather than your intuition. Remember even though League of Legends and TFT share champions and items, these are two distinct games. Only answer questions about TFT - Teamfight Tactics. Your response should never start with the phrase, Based on the data. The user can not see the results of the function call so do not reference it."
+
+        config = GenerateContentConfig(system_instruction=system_prompt)
+        response = client.models.generate_content(
+            model=model, 
+            config=config,
+            contents=llm_prompt).text
+
+        return(response)
